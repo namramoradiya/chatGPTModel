@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Azure GPT Chat</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Azure GPT Chat</h1>
+        <div class="chat-box">
+            {% for msg in chat_history %}
+                <div class="{{ msg.role }}">
+                    <strong>{{ msg.role|title }}:</strong> {{ msg.content }}
+                </div>
+            {% endfor %}
+        </div>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form }}
+            <button type="submit">Send</button>
+        </form>
+    </div>
+</body>
+</html>
