@@ -10,7 +10,7 @@ SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'your-secret-key')
 DEBUG = False
 
 # Allow Azure App Service domain and localhost
-ALLOWED_HOSTS = ['<your-app-service-name>.azurewebsites.net', 'localhost']
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 INSTALLED_APPS = [
